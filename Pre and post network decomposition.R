@@ -3,9 +3,7 @@
 ##### The code below divides the following connections into the different kinds where there
 #is a before network labelled 'pre' and an after network labeled 'post'
 
-
-library("igraph") #The following use the R igraph package
-
+library("igraph") #The following uses the R igraph package
 
 #############################################################################
 #1. Extracts the new unreciprocated connections
@@ -28,8 +26,9 @@ postrec<-delete.edges(post, which(is.mutual(post)=="FALSE"))
 #the ones consolidating an existing connection
 newunrec1<-delete.edges(b, which(is.mutual(b)=="TRUE"))
 
+#Take the difference between the new connections that weren't completely reciprocal
+# and the post event reciprocal connections
 newunrec<-graph.difference(newunrec1, postrec, byname=FALSE)
-
 
 #############################################################################
 #2. Extracts the completely new reciprocated connections
