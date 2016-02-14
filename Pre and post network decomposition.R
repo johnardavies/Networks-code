@@ -44,11 +44,11 @@ edgesgone<-graph.difference(pre, post, byname=FALSE)
 
 
 ############################################################################
-#3. Extracts the new connections that consolidating an existing connection creating a reciprocal connection
+#3. Extracts the new connections that consolidate an existing connection creating a reciprocal connection
 #  Labelled newold
 ############################################################################
 
-#Extracts the reciprocal connections that were formed by consolidation of an existing connection
+#Extracts the reciprocal connections that were formed by consolidating of an existing connection
 newreccon<-graph.difference(postrec, newrec, byname=FALSE)
 
 #Extracts the edges in the consolidated reciprocal connections that are new i.e. the new connections that created the reciprocal connection
