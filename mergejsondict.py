@@ -12,7 +12,7 @@ def merge(x, y):
  return z
 
 
-#Reads in the two datasers
+#Reads in the two datasets
 
 fir='filepath1.json'
 
