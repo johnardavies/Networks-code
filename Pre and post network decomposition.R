@@ -1,7 +1,7 @@
 
 ##################################################################################################
-##### The code below divides the following connections into the different kinds where there
-#is a before network labelled 'pre' and an after network labeled 'post'
+##### The code below divides the following connections created between people on Twitter into 
+# different kinds where there is a before network labelled 'pre' and an after network labeled 'post'
 
 library("igraph") #The following uses the R igraph package
 
@@ -12,7 +12,7 @@ library("igraph") #The following uses the R igraph package
 
 #The next command creates a new network that is the difference between the post and pre network and obtains the edges
 #b contains edges that are in the post network, but which are not in the pre network
-b<-graph.difference(post,pre, byname=FALSE)
+b<-graph.difference(post, pre, byname=FALSE)
 
 ###################################################################################################
 #The graph comparisons here are done on the vertex ids. This depends on the number of vertices remaining unchanging
@@ -57,13 +57,13 @@ newold<-graph.difference(newreccon, pre, byname=FALSE)
 
 ###########################################################################
 #4. Extracts the connections that are in both the pre and post networks i.e. that stayed the same
-# Labelled preandpost 
+#  Labelled preandpost 
 ###########################################################################
 preandpost<-graph.intersection(post, pre, byname=FALSE)
 
 ###########################################################################
 #Checks that everything sums together
-#Connections in the post network =1. New unreciprocated connections (newunrec) + 2. New reciprocal connections (newrec) +3. New consolisated connections (newold) + 4. Connections from the pre network that are in the post network (preandpost)
+#Connections in the post network = 1. New unreciprocated connections (newunrec) + 2. New reciprocal connections (newrec) +3. New consolidated connections (newold) + 4. Connections from the pre network that are in the post network (preandpost)
 
 #Sticks all the connections back together
 testgraph<-graph.union(newunrec, newrec, newold, preandpost, byname=FALSE)
