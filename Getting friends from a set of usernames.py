@@ -1,4 +1,4 @@
-from tweet_auth import *  #Imports my twitter keys and access tokens
+from tweet_auth import *  #Imports my Twitter keys and access tokens
 ####################imports various modules to make things work###########################################
 #imports twython and json
 from twython import Twython
@@ -11,7 +11,7 @@ from collections import defaultdict
 #This programme reads a csv of a set of screen names and
 #returns a json dictionary of the user ids of the people they follow
 
-#creates a twitter client
+#creates a Twitter client
 twitter = Twython(APP_KEY,APP_SECRET, access_token=ACCESS_TOKEN)
 
 #creates the dictionary the results will be stored in
